@@ -1,0 +1,12 @@
+server_post: 4000
+encoding: utf-8
+
+pagenate: 10
+
+auto: true
+server: true
+#safe: true
+#source: https://github.com/yuhiisk/yuhiisk.github.io.git
+#destination: _site
+#lsi: false
+pygments: true

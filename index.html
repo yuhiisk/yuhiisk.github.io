@@ -1,32 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MY SITENAME</title>
-</head>
-<body>
-<div class="container">
-<header class="global-header">
-<h1>My Blog - yuhiisk</h1>
-</header>
+---
+layout: default
+title: MY SITENAME
+---
 
-<div class="contents">
 <ul>
-
-<li>2013-05-04 <a href="/2013/05/04/first-post.html">Awesome Entry</a></li>
-
+{% for page in site.posts %}
+<li>{{ page.date | date: "%Y-%m-%d" }} <a href="{{ page.url }}">{{ page.title }}</a></li>
+{% endfor %}
 </ul>
-
-<!-- /.contents --></div>
-
-<footer class="global-footer">
-<ul>
-<li>Twitter: @yuhiisk</li>
-<li>Facebook: Youhei Isokawa</li>
-</ul>
-<p><small>Copyright &copy; Yuhiisk All rights reserved.</small></p>
-<!-- /.global-footer --></footer>
-<!-- /.container --></div>
-</body>
-</html>
