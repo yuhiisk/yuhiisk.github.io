@@ -1,0 +1,75 @@
+@charset "utf-8";
+// ==========================================================================
+// Site footer
+// ==========================================================================
+.global-footer {
+	@extend .clearfix;
+	position: absolute;
+	bottom: -32px;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	height: 32px;
+
+	.link {
+		@extend .clearfix;
+	}
+
+	.link {
+		float: left;
+		padding-left: 15px;
+
+		li {
+			float: left;
+		}
+		.company {
+			margin-right: 14px;
+		}
+		.privacy {
+			margin-right: 5px;
+		}
+	}
+	.sns {
+		float: left;
+		padding: 0 15px;
+
+		li {
+			padding-top: 5px;
+		}
+	}
+
+	// create sprite
+	// $map-footer: sprite-map("footer/*.png", $spacing: 2px);
+
+	ul li a,
+	.copyright {
+		height: 32px;
+		@include sprite();
+		background-image: url(#{$imgPath}spr_footer_01.png);
+		// @include sprites($map-footer, common, true);
+	}
+
+	// .company a { @include sprites($map-footer, company, false); }
+	// .privacy a { @include sprites($map-footer, privacy, false); }
+	// .social a  { @include sprites($map-footer, social, false); }
+	.company a {
+		width: 87px;
+		background-position: 0 0;
+	}
+	.privacy a {
+		width: 82px;
+		background-position: 0 -102px;
+	}
+	.social a {
+		width: 112px;
+		background-position: 0 -68px;
+	}
+
+	.copyright {
+		float: right;
+		padding-left: 14px;
+		width: 172px;
+		background-position: 0 -34px;
+		// @include sprites($map-footer, copyright, false);
+	}
+}

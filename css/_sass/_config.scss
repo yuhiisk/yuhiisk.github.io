@@ -1,0 +1,78 @@
+@charset "utf-8";
+//
+// グローバル設定ファイル
+// require "Compass" - http://compass-style.org/
+//
+// ==========================================================================
+// import Compass
+// ==========================================================================
+@import "compass";
+
+// ==========================================================================
+// Compass設定
+// ==========================================================================
+// *IE用(PC)は出力させない
+$legacy-support-for-ie: false;
+$legacy-support-for-ie8: true;
+// *旧Firefox向け(PC)のスタイルを出力させない
+$legacy-support-for-mozilla: false;
+
+// ベンダープレフィックスの出力
+$experimental-support-for-webkit: true;
+$experimental-support-for-mozilla: true;
+$experimental-support-for-opera: true;
+$experimental-support-for-microsoft: true;
+$experimental-support-for-khtml: false;
+$official: true;
+
+// テキストを隠す方向
+$hide-text-direction: right;
+
+// CSSスプライトの利用
+//$useCompassSprite: true;
+
+// ==========================================================================
+// 画像設定
+// ==========================================================================
+// 画像のパス
+$imgPath: "/img/";
+
+// ==========================================================================
+// フォント設定
+// ==========================================================================
+// ベースフォント
+$baseFont:'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif !default;
+$baseFontIE: 'ＭＳ Ｐゴシック', sans-serif !default;
+
+// ==========================================================================
+// カラー設定
+// ==========================================================================
+// 背景カラー
+$bgColor: #000 !default;
+// サブカラー
+// $subColor: #eee;
+// アクセントカラー
+// $accentColor: #e73562;
+
+// ベーステキストカラー
+$fontColor: #fff !default;
+// サブテキストカラー
+// $subFontColor: #C8C8C8;
+// $subFontColor2: #A5A5A5;
+// アクセントテキストカラー
+$accentFontColor: #eb5300 !default;
+
+// ベースリンクカラー
+$linkColor: #cc5600 !default;
+$linkColorVisited: #3660A5 !default;
+$linkColorActive: #0066CC !default;
+
+// ボーダーカラー
+// $bdColor1: #505050;
+// $bdColor2: #4F4F4F;
+// $bdColor3: #787878;
+
+// ==========================================================================
+// ウィンドウ設定
+// ==========================================================================
+$wrapperWidth: 1024px;

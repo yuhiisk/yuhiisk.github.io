@@ -1,0 +1,26 @@
+@charset "utf-8";
+// ==========================================================================
+// Page index
+// ==========================================================================
+
+.page.product {
+
+	.content {
+		margin-top: -175px;
+		padding-left: 380px;
+	}
+
+	h1 {
+		margin-bottom: 28px;
+	}
+
+	dl {
+		dt {
+			margin-bottom: 15px;
+			line-height: 1;
+		}
+		dd {
+			margin-bottom: 13px;
+		}
+	}
+}

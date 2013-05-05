@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+/* //////////////////////////////////////////////////
+[Base]
+////////////////////////////////////////////////// */
+
+/* --------------------------------------------------
+	0. Resetting default margin and padding
+-------------------------------------------------- */
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+object, iframe, pre, code, p, blockquote,
+form, fieldset, legend,
+table, th, td, caption, tbody, tfoot, thead,
+article, aside, figure, footer, header,
+hgroup, menu, nav, section, audio, video, canvas {
+	margin: 0;
+	padding: 0;
+}
+/* HTML5 display definitions */
+article, aside, figure, figcaption, footer,
+h1, h2, h3, h4, h5, h6,
+header, hgroup, main, nav, section, summary {
+	display: block;
+}
+audio, canvas, video {
+	display: inline-block;
+}
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+[hidden] {
+	display: none;
+}
+
+
+/* --------------------------------------------------
+	1. HTML, Body, Anchor
+-------------------------------------------------- */
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	background: $bgColor;
+	color: $fontColor;
+	font-family: $baseFont;
+	_font-family: $baseFontIE;
+	font-size: 13px;
+	*font-size: 82%;
+	line-height: 1.9;
+	word-break: break-all;
+	//-webkit-text-size-adjust: 100%;
+}
+/*
+Font-size list (base: 13px)
+ 62% =  8px
+ 70% =  9px
+ 77% = 10px
+ 85% = 11px        162% = 21px        239% = 31px
+ 93% = 12px        170% = 22px        247% = 32px
+100% = 13px        177% = 23px        254% = 33px
+108% = 14px        185% = 24px        262% = 34px
+116% = 15px        193% = 25px        270% = 35px
+124% = 16px        200% = 26px        277% = 36px
+131% = 17px        208% = 27px        285% = 37px
+139% = 18px        216% = 28px        293% = 38px
+147% = 19px        224% = 29px        300% = 39px
+154% = 20px        231% = 30px        308% = 40px
+*/
+// フォントサイズ (ベースサイズ: 13px)
+// ===================================================================
+$fontSizeList: 62%, 70%, 77%, 85%, 93%, 100%, 108%, 116%, 124%, 131%, 139%, 147%, 154%, 162%, 170%, 177%, 185%, 193%, 200%, 208%, 216%, 224%, 231%, 239%, 247%, 254%, 262%, 270%, 277%, 285%, 293%, 300%, 308%;
+@function fz($size) {
+	@if $size < 8 {
+		$size: 8;
+	}
+	@if $size > 40 {
+		$size: 40;
+	}
+	@return nth($fontSizeList, $size - 7);
+}
+
+a { color: $linkColor; }
+a:link, a:visited { text-decoration: underline; }
+a:hover, a:active { text-decoration: none; outline: 0; }
+
+::selection,
+::-moz-selection {
+	background: #eb5600;
+	color: #fbd300;
+}
+
+/* --------------------------------------------------
+	2. Heading, Paragraph
+-------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+/* --------------------------------------------------
+	3. List
+-------------------------------------------------- */
+li { list-style: none; }
+
+/* --------------------------------------------------
+	4. Table
+-------------------------------------------------- */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 100%;
+	font-family: inherit;
+}
+caption, th, td {
+	text-align: left;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+/* --------------------------------------------------
+	5. Form
+-------------------------------------------------- */
+fieldset { border: none; }
+input, textarea, select, label {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: middle;
+}
+label { cursor: pointer; }
+textarea { overflow: auto; }
+legend { display: none; }
+
+/* --------------------------------------------------
+	6. Other
+-------------------------------------------------- */
+img {
+	border: none;
+	vertical-align: top;
+	@include disabled-select-drag;
+}
+object {
+	vertical-align: middle;
+	outline: none;
+}
+svg:not(:root) { /* Correct overflow displayed oddly in IE 9. */
+	overflow: hidden;
+}
+b, em, strong {
+	font-weight: bold;
+	font-style: normal;
+}
+small { font-size: 80%; }
+abbr {
+	border: none;
+	font-variant: normal;
+}
+q:before, q:after { content: ''; }
+address, caption, cite, code, dfn, var {
+	font-weight: normal;
+	font-style: normal;
+}
+code, pre { font-family: monospace; }
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+hr { display: none; }
+
+/* ------------------------------------------------------------
+	7. For IE6/7
+------------------------------------------------------------ */
+
+/* for IE7: page zoom bug fix */
+*:first-child+html body,
+*:first-child+html br { letter-spacing: 0; }
+

@@ -1,0 +1,394 @@
+@charset "utf-8";
+// ==========================================================================
+// Base Contents
+// ==========================================================================
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+/*
+ * global layout
+ */
+.container {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	min-width: 1000px;
+	min-height: 650px;
+
+	&.from-bottom {
+		width: auto;
+		height: auto;
+		min-height: auto;
+	}
+}
+
+/* for Tablet */
+// portrait
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+	.tablet {
+		.container {
+			&:after {
+				content: "このサイトは横表示に最適化されています。";
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2000;
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				background: rgba(0, 0, 0, 0.7);
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+				line-height: 650px;
+				vertical-align: middle;
+				pointer-events: none;
+			}
+		}
+	}
+}
+.wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+%contents-height {
+	height: 100%;
+	min-height: 650px;
+}
+
+.page {
+	position: relative;
+	@extend %contents-height;
+
+	.inner {
+		position: relative;
+		width: 720px;
+		@extend %contents-height;
+		margin: 0 auto;
+	}
+
+	.content {
+		position: absolute;
+		top: 50%;
+	}
+}
+
+
+/*
+ * global background
+ */
+.bg-all {
+	@include position(0, "", "", 0);
+	z-index: -1;
+	overflow: hidden;
+	width: 100%;
+	@extend %contents-height;
+}
+
+/*
+ * bubble animation
+ */
+.burst-bubbles,
+.spark-bubbles,
+.static-bubbles {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.static-bubbles {
+	display: none;
+	top: 0;
+	height: 100%;
+
+	&.type1 { background-image: url(#{$imgPath}bubble/bubble_low.png); }
+	&.type2 { background-image: url(#{$imgPath}bubble/bubble_middle.png); }
+	&.type3 { background-image: url(#{$imgPath}bubble/bubble_front.png); }
+
+	&.type1-burst { background-image: url(#{$imgPath}bubble/bubble_burst_low.png); }
+}
+
+.spark-bubbles {
+	position: fixed;
+	top: 1500px;
+	height: 1500px;
+	background-position: 50% 0;
+	background-repeat: repeat-x;
+
+	&.type1 {
+		background-image: url(#{$imgPath}bubble/bubble_spark.png);
+	}
+}
+
+.burst-bubbles {
+	display: none;
+	height: 0;
+	height: 1200px;
+
+	&.type1 {
+		background-image: url(#{$imgPath}bubble/bubble_burst_middle.png);
+	}
+	&.type2 {
+		background-image: url(#{$imgPath}bubble/bubble_burst_front.png);
+		background-position: 0 20px;
+	}
+}
+
+
+/*
+ * floating-items
+ */
+.floating-item {
+	@include position(50%, "", "", 50%);
+	@include sprite();
+	z-index: 5;
+
+	&.raizin {
+		width: 280px;
+		height: 482px;
+		margin-top: -219px;
+		margin-left: -23px;
+		background-image: url(#{$imgPath}spr_raizin_01.png);
+
+		&.vertical {
+			background-position: -280px 0;
+		}
+		&.easing {
+			background-position: -560px 0;
+		}
+	}
+
+	&.thunder-right,
+	&.thunder-left {
+		width: 453px;
+		height: 451px;
+		margin-top: -224px;
+	}
+	&.thunder-right {
+		margin-left: -74px;
+	}
+	&.thunder-left {
+		margin-left: -390px;
+	}
+
+	&.concept {
+		background-image: url(#{$imgPath}bg_concept_01.png);
+	}
+	&.gallery {
+		background-image: url(#{$imgPath}bg_gallery_01.png);
+	}
+	&.story {
+		background-image: url(#{$imgPath}bg_story_01.png);
+	}
+	&.product {
+		background-image: url(#{$imgPath}bg_product_01.png);
+	}
+
+	// can sprite
+	&.product-1,
+	&.product-2,
+	&.product-3,
+	&.product-4 {
+		background-image: url(#{$imgPath}spr_raizin_02.png);
+	}
+	&.product-1 {
+		width: 140px;
+		height: 174px;
+		background-position: 0 0;
+	}
+	&.product-2 {
+		width: 98px;
+		height: 128px;
+		background-position: -140px 0;
+	}
+	&.product-3 {
+		width: 75px;
+		height: 87px;
+		background-position: -242px 0;
+	}
+	&.product-4 {
+		width: 197px;
+		height: 260px;
+		background-position: -328px 0;
+	}
+}
+
+// ページ缶個別配置
+.concept-can {
+	.product-2 {
+		margin-top: -237px;
+		margin-left: 70px;
+	}
+	.product-4 {
+		margin-top: 31px;
+		margin-left: 308px;
+	}
+}
+.gallery-can {
+	.product-3 {
+		margin-top: -259px;
+		margin-left: 132px;
+	}
+	.product-4 {
+		margin-top: -424px;
+		margin-left: -491px;
+	}
+}
+.story-can {
+	.product-1 {
+		margin-top: 176px;
+		margin-left: 316px;
+	}
+	.product-4 {
+		margin-top: -357px;
+		margin-left: -18px;
+	}
+}
+.product-can {
+	.product-1 {
+		margin-top: -309px;
+		margin-left: -408px;
+	}
+	.product-2 {
+		margin-top: -280px;
+		margin-left: 334px;
+	}
+	.product-3 {
+		margin-top: 206px;
+		margin-left: -420px;
+	}
+	.product-4 {
+		margin-top: 104px;
+		margin-left: 302px;
+	}
+}
+.store-can {
+	.product-2 {
+		margin-top: -252px;
+		margin-left: 125px;
+	}
+	.product-4 {
+		margin-top: -294px;
+		margin-left: 314px;
+	}
+}
+
+
+// page text
+.floating-text {
+	@include position(50%, "", "", 50%);
+	@include sprite();
+	z-index: 15;
+
+	&.concept {
+		width: 298px;
+		height: 76px;
+		margin-top: -38px;
+		margin-left: -149px;
+		background-image: url(#{$imgPath}ttl_concept_01.png);
+	}
+	&.gallery {
+		width: 385px;
+		height: 76px;
+		margin-top: -38px;
+		margin-left: -192px;
+		background-image: url(#{$imgPath}ttl_gallery_01.png);
+	}
+	&.story {
+		width: 197px;
+		height: 76px;
+		margin-top: -38px;
+		margin-left: -99px;
+		background-image: url(#{$imgPath}ttl_story_01.png);
+	}
+	&.product {
+		width: 294px;
+		height: 76px;
+		margin-top: -38px;
+		margin-left: -147px;
+		background-image: url(#{$imgPath}ttl_product_01.png);
+	}
+	&.store {
+		width: 191px;
+		height: 76px;
+		margin-top: -38px;
+		margin-left: -95px;
+		background-image: url(#{$imgPath}ttl_store_01.png);
+	}
+}
+
+
+/*
+ * Modal Window
+ */
+.overlay {
+	@include position(0, "", "", 0);
+	z-index: 1000;
+	width: 100%;
+	@extend %contents-height;
+
+	.overlay-bg {
+		@include position(0, "", "", 0);
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		@include opacity(0.8);
+	}
+	.overlay-inner {
+		@include position(50%, "", "", 50%);
+		z-index: 10;
+		width: 640px;
+		margin-top: -220px;
+		margin-left: -320px;
+	}
+	.close {
+		@include position(0, 2px, "", "");
+		width: 26px;
+		height: 27px;
+		cursor: pointer;
+	}
+}
+
+.modal {
+	.heading {
+		margin: 5px 50px 13px 0;
+		line-height: 1;
+
+		&.heading-cm {
+			padding: 3px 0 0 35px;
+			background: url(#{$imgPath}ttl_cm_01.png) no-repeat left top;
+			font-size: 116%;
+			line-height: 1.2;
+		}
+	}
+	.content {
+		min-height: 300px;
+		background: url(#{$imgPath}icon_loading_01.gif) no-repeat center center;
+		text-align: center;
+	}
+	iframe { border: 0; }
+}
+
+/*
+ * Loading
+ */
+.loading.overlay {
+	display: block;
+}
+.loading .overlay-bg {
+	@include opacity(1);
+}
+.loading-icon {
+	@include position-center(76px, 156px);
+	z-index: 10;
+	width: 76px;
+	height: 156px;
+	background: url(#{$imgPath}icon_loading_01.gif) no-repeat 0 0;
+}

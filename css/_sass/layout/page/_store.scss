@@ -1,0 +1,72 @@
+@charset "utf-8";
+// ==========================================================================
+// Page index
+// ==========================================================================
+
+.page.store {
+
+	.content {
+		margin-top: -180px;
+		padding-left: 40px;
+	}
+
+	h1 {
+		margin-bottom: 55px;
+	}
+
+	.column {
+		@extend .clearfix;
+		margin-right: -20px;
+
+		> li {
+			float: left;
+			width: 205px;
+			min-height: 233px;
+			margin-right: 20px;
+
+			h2 {
+				margin-bottom: 9px;
+				line-height: 1;
+			}
+
+		}
+		a img {
+			@extend .hover-item;
+		}
+
+		.cvs {
+			.bg-dot {
+				padding: 12px 13px 13px;
+				background: url(#{$imgPath}bg_dot_01.png) repeat;
+			}
+			ul {
+				overflow: hidden;
+				min-height: 189px;
+				margin: 0 -10px -9px 0;
+			}
+			li {
+				float: left;
+				margin: 0 9px 9px 0;
+				background-color: #000;
+			}
+		}
+
+		.online {
+			li {
+				margin-top: 12px;
+				background-color: #000;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.other {
+			.detail {
+				margin-bottom: 0;
+				background-color: #000;
+			}
+		}
+	}
+}
