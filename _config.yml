@@ -3,8 +3,8 @@ encoding: utf-8
 
 pagenate: 10
 
-auto: true
 server: true
+watch: true
 #safe: true
 #source: https://github.com/yuhiisk/yuhiisk.github.io.git
 #destination: _site

@@ -1,58 +1,15 @@
 @charset "utf-8";
 
-/* //////////////////////////////////////////////////
-[Base]
-////////////////////////////////////////////////// */
-
-/* --------------------------------------------------
-	0. Resetting default margin and padding
--------------------------------------------------- */
-body, div, dl, dt, dd, ul, ol, li,
-h1, h2, h3, h4, h5, h6,
-object, iframe, pre, code, p, blockquote,
-form, fieldset, legend,
-table, th, td, caption, tbody, tfoot, thead,
-article, aside, figure, footer, header,
-hgroup, menu, nav, section, audio, video, canvas {
-	margin: 0;
-	padding: 0;
-}
-/* HTML5 display definitions */
-article, aside, figure, figcaption, footer,
-h1, h2, h3, h4, h5, h6,
-header, hgroup, main, nav, section, summary {
-	display: block;
-}
-audio, canvas, video {
-	display: inline-block;
-}
-audio:not([controls]) {
-	display: none;
-	height: 0;
-}
-[hidden] {
-	display: none;
-}
-
-
-/* --------------------------------------------------
-	1. HTML, Body, Anchor
--------------------------------------------------- */
 html {
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
 }
 
 body {
-	background: $bgColor;
-	color: $fontColor;
 	font-family: $baseFont;
 	_font-family: $baseFontIE;
 	font-size: 13px;
-	*font-size: 82%;
+	*font-size: small;
 	line-height: 1.9;
 	word-break: break-all;
-	//-webkit-text-size-adjust: 100%;
 }
 /*
 Font-size list (base: 13px)
@@ -107,21 +64,18 @@ p {
 /* --------------------------------------------------
 	3. List
 -------------------------------------------------- */
-li { list-style: none; }
+// li { list-style: none; }
 
 /* --------------------------------------------------
 	4. Table
 -------------------------------------------------- */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	font-size: 100%;
+	font-size: inherit;
 	font-family: inherit;
 }
 caption, th, td {
 	text-align: left;
 	vertical-align: top;
-	font-weight: normal;
 }
 
 /* --------------------------------------------------
@@ -146,46 +100,23 @@ legend { display: none; }
 -------------------------------------------------- */
 img {
 	border: none;
-	vertical-align: top;
+	vertical-align: bottom;
 	@include disabled-select-drag;
 }
 object {
 	vertical-align: middle;
 	outline: none;
 }
-svg:not(:root) { /* Correct overflow displayed oddly in IE 9. */
-	overflow: hidden;
-}
 b, em, strong {
 	font-weight: bold;
 	font-style: normal;
 }
-small { font-size: 80%; }
-abbr {
-	border: none;
-	font-variant: normal;
-}
-q:before, q:after { content: ''; }
+
 address, caption, cite, code, dfn, var {
 	font-weight: normal;
 	font-style: normal;
 }
-code, pre { font-family: monospace; }
-sub, sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+code, pre {
+	font-family: consolas, monospace;
 }
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-hr { display: none; }
-
-/* ------------------------------------------------------------
-	7. For IE6/7
------------------------------------------------------------- */
-
-/* for IE7: page zoom bug fix */
-*:first-child+html body,
-*:first-child+html br { letter-spacing: 0; }
 

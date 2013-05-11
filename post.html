@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi:http://mixi-platform.com/ns# article: http://ogp.me/ns/article#">
+<meta charset="UTF-8">
+<title>POST | YUHIISK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="- YUHIISK">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://blog.yuhiisk.com/">
+<meta property="og:image" content="http://blog.yuhiisk.com/img/">
+<meta property="og:site_name" content="YUHIISK BLOG">
+<meta property="og:description" content="">
+<meta property="fb:appId" content="419866574778905">
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" sizes="16x16" href="/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Megrim">
+<link rel="stylesheet" href="/css/style.css" media="all">
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=419866574778905";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<header class="global-header">
+<h1 class="logo">YUHIISK</h1>
+<nav>
+<ul>
+<li><a href="#">TOP</a></li>
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">CONTACT</a></li>
+</ul>
+<div class="toggle">
+<span></span>
+<span></span>
+<span></span>
+<!-- /.toggle --></div>
+</nav>
+<!-- /.global-header --></header>
+
+<article class="mod-article">
+<header>
+<h1>コーディングの必須ツールになりそう。<br />
+ステキなCSSスタイルガイドを生成する「styleDocco」の導入と<br />
+grunt.jsでの自動化のメモ</h1>
+<div class="tagline">
+<time>13/04/08</time>
+<ul class="tags">
+<li><a href="#">CSS</a></li>
+<li><a href="#">Javascript</a></li>
+<!-- /.tags --></ul>
+
+<ul class="sns">
+<li class="mixi"><a href="http://static.mixi.jp/share.pl" class="mixi-check-button" data-button="button-3" data-key="820d43c643c0688fb2fd417983c2dba06657a03d" data-url="http://blog.yuhiisk.com/">チェック</a><script type="text/javascript" src="http://static.mixi.jp/js/share.js"></script></li>
+<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-via="Yuhiisk" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+<li class="facebook"><div class="fb-like" data-href="http://blog.yuhiisk.com/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div></li>
+<li class="hatena"><a href="http://b.hatena.ne.jp/entry/http://blog.yuhiisk.com/" class="hatena-bookmark-button" data-hatena-bookmark-title="YUHIISK" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+<script src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
+<li class="google"><script src="https://apis.google.com/js/plusone.js"></script><g:plusone></g:plusone></li>
+</ul>
+<!-- /.tagline --></div>
+</header>
+
+<p>プロジェクトでコーディングする時に、複数の作業者がいる場合にスタイルガイドはとても重要です。<br />
+特にスマートフォン向けのサービスでは、モジュールの共通化や画像のスプライト化がもろにページ表示速度に影響するため、より精度が高く細かいアップデートに耐えうるCSSスタイルガイドが必要になります。これをExcelやPowerPointで管理していると、細かい変更の反映が大変だし、なにより見にくい。</p>
+
+<h2>「styleDocco」ってなに？</h2>
+<p>「styleDocco」はnode.jsで実装されたスタイルガイドジェネレータです！って言われてもよくわかんないですが、簡単に言うと、CSSにコメント形式で説明とHTMLを書き込んで吐き出すと、見栄えも見れるスタイルガイドの出来上がりって感じです。</p>
+
+<h3>「styleDocco」のインストール</h3>
+<p>「styleDocco」はnode.jsで実装されたスタイルガイドジェネレータです！って言われてもよくわかんないですが、簡単に言うと、<strong>CSSにコメント形式で説明とHTMLを書き込んで吐き出すと、見栄えも見れるスタイルガイドの出来上がり</strong>って感じです。</p>
+<pre><code>&lt;!--Put these into the &lt;head&gt; --&gt;
+&lt;html&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;responsive-nav.css&quot;&gt;
+&lt;script src=&quot;responsive-nav.js&quot;&gt;
+&lt;/script&gt;</code></pre>
+
+<h4>ボタン</h4>
+<div class="btn download"><a href="#">Download</a></div>
+<div class="btn demo"><a href="#">Demo</a></div>
+
+<h4>リンク</h4>
+<a href="#">HTML5コンテンツ・モデル World Wide Web Guide</a>
+
+<h4>リスト</h4>
+<ul>
+<li>CSSに直接書くので、スタイルガイドの更新性が高い</li>
+<li>実際の見栄えが確認できるので、他のメンバーとの共有がしやすい</li>
+<li>他のモジュールを作成する時の作業効率が上がる</li>
+<li>CSS記述の重複を防げそう</li>
+</ul>
+
+<ol>
+<li>list1</li>
+<li>list2</li>
+<li>list3</li>
+<li>list4</li>
+</ol>
+
+<dl>
+<dt>dl title</dt>
+<dd>dl text</dd>
+</dl>
+
+<h4>注意</h4>
+<p><ins>注）スキップリンクを設置するか？という部分はちょっと微妙な気がしますが、要するに 「そのナビゲーションがサイト全体を閲覧するにあたって、重要な役割を果たすものなのか」 を基準にすればいいと思います。</ins></p>
+
+<h4>画像</h4>
+<p><img src="/img/dummy.jpg" alt="画像" /></p>
+
+<h4>強調</h4>
+<p>最終的に何をこれでしたいかと言うと、<em>style.cssにスタイルガイド用のコメント付きCSSを記述して、変更するたびにスタイルガイドのstyle.htmlとMinify(コメント・改行の削除)されたall.cssを吐き出すってことをしたい</em>わけです。</p>
+
+<h4>テーブル</h4>
+<table>
+<tr>
+<th>section</th>
+<td>必ず見出し（h1〜h6）を伴うコンテンツ</td>
+</tr>
+<tr>
+<th>section</th>
+<td>必ず見出し（h1〜h6）を伴うコンテンツ</td>
+</tr>
+<tr>
+<th>section</th>
+<td>必ず見出し（h1〜h6）を伴うコンテンツ</td>
+</tr>
+<tr>
+<th>section</th>
+<td>必ず見出し（h1〜h6）を伴うコンテンツ</td>
+</tr>
+</table>
+
+<h4>引用</h4>
+<p>
+<blockquote>プロジェクトでコーディングする時に、複数の作業者がいる場合にスタイルガイドはとても重要です。特にスマートフォン向けのサービスでは、モジュールの共通化や画像のスプライト化がもろにページ表示速度に影響するため、より精度が高く細かいアップデートに耐えうるCSSスタイルガイドが必要になります。これをExcelやPowerPointで管理していると、細かい変更の反映が大変だし、なにより見にくい。</blockquote>
+<a href="#">HTML5コンテンツ・モデル World Wide Web Guide</a>
+</p>
+<!-- /.mod-article --></article>
+
+<nav class="pager">
+<ul>
+<li class="prev">Firefox OS 搭載の開発プレビュー端末が発売開始あああああああああああああああああああああああ</li>
+<li class="next">Dropbox が箱に入って販売される</li>
+</ul>
+<!-- /.pager --></nav>
+
+<footer class="global-footer">
+<ul>
+<li>Twitter: <a href="https://twitter.com/Yuhiisk" target="_blank">@yuhiisk</a></li>
+<li>Facebook: <a href="https://www.facebook.com/youhei.isokawa" target="_blank">Youhei Isokawa</a></li>
+</ul>
+<p><small>Copyright &copy; Yuhiisk All rights reserved.</small></p>
+<!-- /.global-footer --></footer>
+</body>
+</html>

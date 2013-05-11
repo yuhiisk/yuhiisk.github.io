@@ -1,0 +1,64 @@
+@charset "utf-8";
+// ==========================================================================
+// Global navigation
+// ==========================================================================
+.global-nav {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 100;
+	width: 164px;
+	height: 256px;
+	margin-top: -128px;
+	margin-left: -164px;
+
+	h1,
+	nav a {
+		@include sprite;
+	}
+	h1 {
+		height: 50px;
+		background-image: url(#{$imgPath}logo_nav_01.png);
+	}
+	nav {
+		position: relative;
+
+		a {
+			height: 34px;
+			background-image: url(#{$imgPath}nav_global_01.png);
+		}
+		.index a   { background-position: 0 0; }
+		.concept a { background-position: 0 -34px; }
+		.gallery a { background-position: 0 -68px; }
+		.story a   { background-position: 0 -102px; }
+		.product a { background-position: 0 -136px; }
+		.store a   { background-position: 0 -170px; }
+
+		.index a:hover   { background-position: -164px 0; }
+		.concept a:hover { background-position: -164px -34px; }
+		.gallery a:hover { background-position: -164px -68px; }
+		.story a:hover   { background-position: -164px -102px; }
+		.product a:hover { background-position: -164px -136px; }
+		.store a:hover   { background-position: -164px -170px; }
+
+		.index.active a   { background-position: -329px 0; }
+		.concept.active a { background-position: -329px -34px; }
+		.gallery.active a { background-position: -329px -68px; }
+		.story.active a   { background-position: -329px -102px; }
+		.product.active a { background-position: -329px -136px; }
+		.store.active a   { background-position: -329px -170px; }
+	}
+}
+
+/* scroll navigation */
+.scroll-nav {
+	position: absolute;
+	top: -61px;
+	left: 50%;
+	z-index: 2;
+	width: 96px;
+	height: 61px;
+	margin-left: -48px;
+	@include sprite();
+	background-image: url(#{$imgPath}img_scroll_01.gif);
+}

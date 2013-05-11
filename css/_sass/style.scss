@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* yuhiisk.com */
+// [comment rules]
+// https://github.com/necolas/idiomatic-css/tree/master/translations/ja-JP
+
+// ==========================================================================
+// Import files
+// ==========================================================================
+
+// Common files (require)
+// ==========================================================================
+// import config file & Compass core
+@import "config";
+// import original mixin
+@import "mixin";
+
+// import file
+// ==========================================================================
+// reset
+@import "reset/normalize";
+@import "reset/reset";
+// layout
+// @import "layout";
+// module
+// @import "module";
