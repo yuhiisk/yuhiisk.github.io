@@ -563,11 +563,31 @@ i {
   border-top: 2px solid #000;
   padding: 1em 0;
 }
+.global-footer .profile {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 111px;
+}
+.global-footer .profile .author {
+  margin: 0 0 15px;
+  font-size: 18px;
+  font-weight: normal;
+}
 .global-footer .profile ul {
+  margin: 0 0 10px;
   padding: 0;
 }
 .global-footer .profile ul li {
   list-style: none;
+}
+.global-footer .profile .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #ccc;
+}
+.global-footer .copyright {
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -664,10 +684,10 @@ i {
 }
 
 /* Clearfix */
-.clearfix:before, .inner:before, .mod-article .tagline:before, .mod-pager ul:before, .sns:before, .clearfix:after, .inner:after, .mod-article .tagline:after, .mod-pager ul:after, .sns:after {
+.clearfix:before, .inner:before, .mod-article .tagline:before, .mod-pager ul:before, .global-footer .profile:before, .sns:before, .clearfix:after, .inner:after, .mod-article .tagline:after, .mod-pager ul:after, .global-footer .profile:after, .sns:after {
   content: "";
   display: table;
 }
-.clearfix:after, .inner:after, .mod-article .tagline:after, .mod-pager ul:after, .sns:after {
+.clearfix:after, .inner:after, .mod-article .tagline:after, .mod-pager ul:after, .global-footer .profile:after, .sns:after {
   clear: both;
 }
