@@ -26,6 +26,7 @@
 		letter-spacing: 0.1em;
 		line-height: 35px;
 		vertical-align: top;
+		@include single-transition(all, 0.5s, ease-in);
 
 		&:hover {
 			@include background-image(linear-gradient(#303030, #222222));
@@ -77,6 +78,10 @@
 // 	@include sprite;
 // }
 
+.test {
+	color: black;
+	position: static;
+}
 /* opacity hover */
 .hover-item {
 	&:hover {
@@ -89,9 +94,6 @@
 	display: none !important;
 	visibility: hidden;
 }
-
-// /* spacing class */
-// .mb0 { margin-bottom: 0 !important; }
 
 /* Clearfix */
 .clearfix {

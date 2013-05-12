@@ -627,6 +627,10 @@ i {
   letter-spacing: 0.1em;
   line-height: 35px;
   vertical-align: top;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 .btn a:hover {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #303030), color-stop(100%, #222222));
@@ -673,6 +677,11 @@ i {
 .sns .google {
   overflow: hidden;
   width: 70px;
+}
+
+.test {
+  color: black;
+  position: static;
 }
 
 /* opacity hover */

@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+	var proc = require('child_process');
+
 	// grunt.loadNpmTasks('grunt-contrib-cssmin');
 	// grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-compass');
@@ -14,17 +16,26 @@ module.exports = function(grunt) {
 			}
 		},
 
+		growl: {
+			notify: 'growlnotify \t:"from grunt" "compiled!"'
+		},
+
 		watch: {
 			files: [
 				'css/_sass/*.scss',
 				'css/_sass/reset/*.scss',
 				'css/_sass/layout/*.scss'
 			],
-			tasks: ['compass']
+			tasks: ['compass', 'growl']
 		}
 
 	});
 
-	grunt.registerTask('default', ['compass', 'watch']);
+	grunt.registerMultiTask('growl', 'growl notify', function() {
+		// for windows
+		proc.exec(this.data);
+	});
+
+	grunt.registerTask('default', ['compass', 'watch', 'growl']);
 
 };
