@@ -6,26 +6,76 @@
 
 /* Utilities
    ========================================================================== */
-/* Twitter & Facebook button */
+/* button */
+.btn {
+	display: inline-block;
+	width: 210px;
+	text-align: center;
+
+	a {
+		display: block;
+		height: 35px;
+		padding: 0;
+		@include border-radius(3px);
+		background: none;
+		@include background-image(linear-gradient(#4f4f4f, #222222));
+		color: #fff;
+		font-size: 18px;
+		font-family: consolas, $sourceCodePro;
+		text-decoration: none;
+		letter-spacing: 0.1em;
+		line-height: 35px;
+		vertical-align: top;
+
+		&:hover {
+			@include background-image(linear-gradient(#303030, #222222));
+		}
+	}
+	i {
+		margin-top: 7px;
+		margin-right: 5px;
+	}
+}
+.download {
+	i { margin: 7px 5px 0 0; }
+}
+.demo {
+	i { margin: 9px 5px 0 0; }
+}
+
+/* link */
+.link {
+	padding-right: 20px;
+}
+
+/* SNS button */
 .sns {
 	@extend .clearfix;
+	margin: 0;
+	padding: 0;
+
 	li {
+		list-style: none;
 		float: left;
+		margin-left: 10px;
 		line-height: 1;
 	}
 	.twitter-share-button {
 		width: 110px !important;
 	}
-	.fb {
-		overflow: hidden;
+	.facebook {
 		height: 20px;
+	}
+	.google {
+		overflow: hidden;
+		width: 70px;
 	}
 }
 
-/* CSS Sprite */
-.sprite-item {
-	@include sprite;
-}
+// /* CSS Sprite */
+// .sprite-item {
+// 	@include sprite;
+// }
 
 /* opacity hover */
 .hover-item {
@@ -40,10 +90,8 @@
 	visibility: hidden;
 }
 
-/* spacing class */
-.mb0 {
-	margin-bottom: 0 !important;
-}
+// /* spacing class */
+// .mb0 { margin-bottom: 0 !important; }
 
 /* Clearfix */
 .clearfix {

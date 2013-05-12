@@ -4,11 +4,11 @@
    Layout
    ========================================================================== */
 
-/* Navigation
+/* Heder
    ========================================================================== */
-@import "layout/navigation";
+@import "layout/header";
 
-/* Contents base
+/* Contents
    ========================================================================== */
 @import "layout/main";
 
@@ -16,33 +16,3 @@
    ========================================================================== */
 @import "layout/footer";
 
-/* Top
-   ========================================================================== */
-/* index */
-@import "layout/page/index";
-/* concept */
-@import "layout/page/concept";
-/* gallery */
-@import "layout/page/gallery";
-/* story */
-@import "layout/page/story";
-/* product */
-@import "layout/page/product";
-/* store */
-@import "layout/page/store";
-
-/* Interview
-   ========================================================================== */
-@import "layout/page/interview";
-
-/* animation items */
-.page,
-.overlay,
-.floating-item,
-.floating-text {
-	display: none;
-}
-
-/* Error
-   ========================================================================== */
-@import "layout/error";

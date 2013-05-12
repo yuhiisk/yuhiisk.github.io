@@ -32,7 +32,8 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <header class="global-header">
-<h1 class="logo">YUHIISK</h1>
+<div class="inner">
+<h1 class="logo"><a href="/">Yuhiisk</a></h1>
 <nav>
 <ul>
 <li><a href="#">TOP</a></li>
@@ -45,32 +46,38 @@
 <span></span>
 <!-- /.toggle --></div>
 </nav>
+<!-- /.inner --></div>
 <!-- /.global-header --></header>
 
 <article class="mod-article">
-<header>
+<header class="mod-article-header">
 <h1>コーディングの必須ツールになりそう。<br />
 ステキなCSSスタイルガイドを生成する「styleDocco」の導入と<br />
 grunt.jsでの自動化のメモ</h1>
-<div class="tagline">
-<time>13/04/08</time>
-<ul class="tags">
-<li><a href="#">CSS</a></li>
-<li><a href="#">Javascript</a></li>
-<!-- /.tags --></ul>
 
+<div class="tagline">
+<p class="tags"><time>13/04/08</time>
+<i></i><a href="#">CSS</a>, <a href="#">Javascript</a></p>
 <ul class="sns">
-<li class="mixi"><a href="http://static.mixi.jp/share.pl" class="mixi-check-button" data-button="button-3" data-key="820d43c643c0688fb2fd417983c2dba06657a03d" data-url="http://blog.yuhiisk.com/">チェック</a><script type="text/javascript" src="http://static.mixi.jp/js/share.js"></script></li>
-<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-via="Yuhiisk" data-lang="ja">ツイート</a>
+<li class="mixi"><div data-plugins-type="mixi-favorite" data-service-key="820d43c643c0688fb2fd417983c2dba06657a03d"></div>
+<script type="text/javascript">
+(function(d) {
+    var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true;
+    s.src = '//static.mixi.jp/js/plugins.js#lang=ja';
+    d.getElementsByTagName('head')[0].appendChild(s);
+})(document);
+</script></li>
+<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
 <li class="facebook"><div class="fb-like" data-href="http://blog.yuhiisk.com/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div></li>
 <li class="hatena"><a href="http://b.hatena.ne.jp/entry/http://blog.yuhiisk.com/" class="hatena-bookmark-button" data-hatena-bookmark-title="YUHIISK" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
 <script src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
-<li class="google"><script src="https://apis.google.com/js/plusone.js"></script><g:plusone></g:plusone></li>
+<li class="google"><script src="https://apis.google.com/js/plusone.js"></script><g:plusone size="medium"></g:plusone></li>
 </ul>
 <!-- /.tagline --></div>
 </header>
 
+<div class="mod-article-body">
 <p>プロジェクトでコーディングする時に、複数の作業者がいる場合にスタイルガイドはとても重要です。<br />
 特にスマートフォン向けのサービスでは、モジュールの共通化や画像のスプライト化がもろにページ表示速度に影響するため、より精度が高く細かいアップデートに耐えうるCSSスタイルガイドが必要になります。これをExcelやPowerPointで管理していると、細かい変更の反映が大変だし、なにより見にくい。</p>
 
@@ -86,8 +93,8 @@ grunt.jsでの自動化のメモ</h1>
 &lt;/script&gt;</code></pre>
 
 <h4>ボタン</h4>
-<div class="btn download"><a href="#">Download</a></div>
-<div class="btn demo"><a href="#">Demo</a></div>
+<div class="btn download"><a href="#"><i></i>Download</a></div>
+<div class="btn demo"><a href="#"><i></i>Demo</a></div>
 
 <h4>リンク</h4>
 <a href="#">HTML5コンテンツ・モデル World Wide Web Guide</a>
@@ -116,7 +123,7 @@ grunt.jsでの自動化のメモ</h1>
 <p><ins>注）スキップリンクを設置するか？という部分はちょっと微妙な気がしますが、要するに 「そのナビゲーションがサイト全体を閲覧するにあたって、重要な役割を果たすものなのか」 を基準にすればいいと思います。</ins></p>
 
 <h4>画像</h4>
-<p><img src="/img/dummy.jpg" alt="画像" /></p>
+<figure><img src="/img/dummy.jpg" alt="画像" /></figure>
 
 <h4>強調</h4>
 <p>最終的に何をこれでしたいかと言うと、<em>style.cssにスタイルガイド用のコメント付きCSSを記述して、変更するたびにスタイルガイドのstyle.htmlとMinify(コメント・改行の削除)されたall.cssを吐き出すってことをしたい</em>わけです。</p>
@@ -143,24 +150,30 @@ grunt.jsでの自動化のメモ</h1>
 
 <h4>引用</h4>
 <p>
-<blockquote>プロジェクトでコーディングする時に、複数の作業者がいる場合にスタイルガイドはとても重要です。特にスマートフォン向けのサービスでは、モジュールの共通化や画像のスプライト化がもろにページ表示速度に影響するため、より精度が高く細かいアップデートに耐えうるCSSスタイルガイドが必要になります。これをExcelやPowerPointで管理していると、細かい変更の反映が大変だし、なにより見にくい。</blockquote>
-<a href="#">HTML5コンテンツ・モデル World Wide Web Guide</a>
+<blockquote>プロジェクトでコーディングする時に、複数の作業者がいる場合にスタイルガイドはとても重要です。特にスマートフォン向けのサービスでは、モジュールの共通化や画像のスプライト化がもろにページ表示速度に影響するため、より精度が高く細かいアップデートに耐えうるCSSスタイルガイドが必要になります。これをExcelやPowerPointで管理していると、細かい変更の反映が大変だし、なにより見にくい。<br />
+<a href="#">HTML5コンテンツ・モデル World Wide Web Guide</a></blockquote>
 </p>
+<!-- /.mod-article-body --></div>
 <!-- /.mod-article --></article>
 
-<nav class="pager">
+<nav class="mod-pager">
 <ul>
-<li class="prev">Firefox OS 搭載の開発プレビュー端末が発売開始あああああああああああああああああああああああ</li>
-<li class="next">Dropbox が箱に入って販売される</li>
+<li class="prev"><a href="#">Firefox OS 搭載の開発プレビュー端末が発売開始あああああああああああああああああああああああ</a></li>
+<li class="next"><a href="#">Dropbox が箱に入って販売される</a></li>
 </ul>
-<!-- /.pager --></nav>
+<!-- /.mod-pager --></nav>
 
 <footer class="global-footer">
+<div class="inner">
+<div class="profile">
 <ul>
-<li>Twitter: <a href="https://twitter.com/Yuhiisk" target="_blank">@yuhiisk</a></li>
+<li>Twitter: <a href="https://twitter.com/Yuhiisk" target="_blank">@Yuhiisk</a></li>
 <li>Facebook: <a href="https://www.facebook.com/youhei.isokawa" target="_blank">Youhei Isokawa</a></li>
 </ul>
+<!-- /.profile --></div>
+
 <p><small>Copyright &copy; Yuhiisk All rights reserved.</small></p>
+<!-- /.inner --></div>
 <!-- /.global-footer --></footer>
 </body>
 </html>

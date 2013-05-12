@@ -13,7 +13,7 @@
 // ==========================================================================
 // *IE用(PC)は出力させない
 $legacy-support-for-ie: false;
-$legacy-support-for-ie8: true;
+$legacy-support-for-ie8: false;
 // *旧Firefox向け(PC)のスタイルを出力させない
 $legacy-support-for-mozilla: false;
 
@@ -43,36 +43,37 @@ $imgPath: "/img/";
 // ベースフォント
 $baseFont:'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif !default;
 $baseFontIE: 'ＭＳ Ｐゴシック', sans-serif !default;
+$sourceCodePro: 'Source Code Pro', sans-serif;
+$megrim: 'Megrim', sans-serif;
 
 // ==========================================================================
 // カラー設定
 // ==========================================================================
 // 背景カラー
-$bgColor: #000 !default;
+$bgColor: #fff !default;
 // サブカラー
 // $subColor: #eee;
 // アクセントカラー
 // $accentColor: #e73562;
 
 // ベーステキストカラー
-$fontColor: #fff !default;
+$fontColor: #555 !default;
 // サブテキストカラー
 // $subFontColor: #C8C8C8;
 // $subFontColor2: #A5A5A5;
 // アクセントテキストカラー
-$accentFontColor: #eb5300 !default;
+$accentFontColor: #222 !default;
 
 // ベースリンクカラー
-$linkColor: #cc5600 !default;
-$linkColorVisited: #3660A5 !default;
-$linkColorActive: #0066CC !default;
+$linkColor: #258fb8 !default;
+$linkColorVisited: #258fb8 !default;
+$linkColorActive: #258fb8 !default;
 
 // ボーダーカラー
-// $bdColor1: #505050;
-// $bdColor2: #4F4F4F;
-// $bdColor3: #787878;
+$bdColor1: #303030;
 
 // ==========================================================================
 // ウィンドウ設定
 // ==========================================================================
-$wrapperWidth: 1024px;
+$siteWidth: 1000px;
+$mainWidth: 800px;

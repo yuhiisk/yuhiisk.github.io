@@ -1,14 +1,15 @@
 @charset "utf-8";
 
 html {
+	color: #555;
 }
 
 body {
 	font-family: $baseFont;
 	_font-family: $baseFontIE;
-	font-size: 13px;
-	*font-size: small;
-	line-height: 1.9;
+	// font-size: 13px;
+	// *font-size: small;
+	line-height: 1.6;
 	word-break: break-all;
 }
 /*
@@ -53,10 +54,10 @@ a:hover, a:active { text-decoration: none; outline: 0; }
 /* --------------------------------------------------
 	2. Heading, Paragraph
 -------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
-	font-size: 100%;
-}
-
+// h1, h2, h3, h4, h5, h6 {
+// 	font-size: 100%;
+// }
+// 
 p {
 	margin-bottom: 1em;
 }
@@ -64,7 +65,8 @@ p {
 /* --------------------------------------------------
 	3. List
 -------------------------------------------------- */
-// li { list-style: none; }
+ul, ol { padding-left: 30px; }
+nav li { list-style: none; }
 
 /* --------------------------------------------------
 	4. Table
@@ -74,6 +76,7 @@ table {
 	font-family: inherit;
 }
 caption, th, td {
+	font-weight: normal;
 	text-align: left;
 	vertical-align: top;
 }
@@ -119,4 +122,15 @@ address, caption, cite, code, dfn, var {
 code, pre {
 	font-family: consolas, monospace;
 }
+pre {
+	background-color: #3b3b3b;
+	color: #c2c2c2;
+}
+ins {
+	background-color: #ffff99;
+	text-decoration: none;
+}
 
+blockquote {
+	font-style: italic;
+}

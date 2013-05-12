@@ -208,12 +208,14 @@ table {
   border-spacing: 0;
 }
 
+html {
+  color: #555;
+}
+
 body {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   _font-family: "ＭＳ Ｐゴシック", sans-serif;
-  font-size: 13px;
-  *font-size: small;
-  line-height: 1.9;
+  line-height: 1.6;
   word-break: break-all;
 }
 
@@ -234,7 +236,7 @@ Font-size list (base: 13px)
 154% = 20px        231% = 30px        308% = 40px
 */
 a {
-  color: #cc5600;
+  color: #258fb8;
 }
 
 a:link, a:visited {
@@ -255,10 +257,6 @@ a:hover, a:active {
 /* --------------------------------------------------
 	2. Heading, Paragraph
 -------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-}
-
 p {
   margin-bottom: 1em;
 }
@@ -266,6 +264,14 @@ p {
 /* --------------------------------------------------
 	3. List
 -------------------------------------------------- */
+ul, ol {
+  padding-left: 30px;
+}
+
+nav li {
+  list-style: none;
+}
+
 /* --------------------------------------------------
 	4. Table
 -------------------------------------------------- */
@@ -275,6 +281,7 @@ table {
 }
 
 caption, th, td {
+  font-weight: normal;
   text-align: left;
   vertical-align: top;
 }
@@ -341,4 +348,326 @@ address, caption, cite, code, dfn, var {
 
 code, pre {
   font-family: consolas, monospace;
+}
+
+pre {
+  background-color: #3b3b3b;
+  color: #c2c2c2;
+}
+
+ins {
+  background-color: #ffff99;
+  text-decoration: none;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+/* Heder
+   ========================================================================== */
+.global-header {
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #ccc;
+  background-color: #fafafa;
+  text-shadow: 1px 1px 1px #fff;
+}
+.global-header a {
+  color: #666666;
+  text-decoration: none;
+}
+.global-header .logo {
+  float: left;
+  color: #666666;
+  font-size: 29px;
+  font-family: "Megrim", sans-serif;
+  line-height: 30px;
+  letter-spacing: 0.15em;
+}
+.global-header nav {
+  float: right;
+  font-family: "Source Code Pro", sans-serif;
+}
+.global-header nav ul {
+  margin-top: 1.3em;
+  text-align: right;
+}
+.global-header nav li {
+  display: inline-block;
+}
+.global-header nav a:hover {
+  text-decoration: underline;
+}
+
+.inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Contents
+   ========================================================================== */
+i {
+  background-image: url('../img/sprite-sa9d3f5beb6.png');
+  background-repeat: no-repeat;
+}
+
+i {
+  display: inline-block;
+  position: relative;
+}
+
+.tags i {
+  width: 16px;
+  height: 16px;
+  background-position: 0 -44px;
+}
+
+.download i {
+  width: 30px;
+  height: 21px;
+  background-position: 0 -21px;
+}
+
+.demo i {
+  width: 28px;
+  height: 19px;
+  background-position: 0 0;
+}
+
+.contents, .mod-article, .mod-pager {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.mod-article {
+  padding-top: 20px;
+}
+.mod-article .tagline {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.mod-article .tagline time {
+  display: block;
+  float: left;
+  width: 5em;
+}
+.mod-article .tagline .tags {
+  float: left;
+  margin: 0;
+}
+.mod-article .tagline .tags i {
+  margin: 0 5px -4px 13px;
+}
+.mod-article .tagline .sns {
+  float: right;
+}
+
+.mod-article-header h1 {
+  margin-top: 1.8em;
+  font-weight: normal;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.mod-article-body h2,
+.mod-article-body h3 {
+  margin-top: 1.8em;
+  font-weight: normal;
+}
+.mod-article-body h2 {
+  border-bottom: 1px solid #303030;
+  font-size: 20px;
+}
+.mod-article-body h3 {
+  border-bottom: 1px dotted #303030;
+  font-size: 18px;
+}
+.mod-article-body h4 {
+  margin: 1.8em 0 0.8em;
+}
+.mod-article-body p, .mod-article-body blockquote, .mod-article-body li {
+  line-height: 2;
+}
+.mod-article-body blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.3em 1em;
+  border-left: 4px solid #666;
+}
+.mod-article-body a {
+  padding-right: 20px;
+  background: url(/img/window.png) no-repeat right 3px;
+  font-style: normal;
+}
+.mod-article-body figure {
+  text-align: center;
+}
+.mod-article-body img {
+  padding: 4px;
+  background: url(/img/dot.png) repeat;
+}
+.mod-article-body table th,
+.mod-article-body table td {
+  padding: 15px 20px;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.mod-article-body table th {
+  color: #ddd;
+  background-color: #666;
+}
+.mod-article-body table td {
+  color: #2a2a2a;
+  background-color: #dadada;
+}
+
+.mod-pager {
+  margin: 3em auto;
+}
+.mod-pager ul {
+  padding: 0;
+}
+.mod-pager li {
+  background-repeat: no-repeat;
+}
+.mod-pager .prev {
+  float: left;
+  padding-left: 25px;
+  background-image: url(/img/arrow1.png);
+  background-position: 0 3px;
+}
+.mod-pager .next {
+  float: right;
+  padding-right: 25px;
+  background-image: url(/img/arrow2.png);
+  background-position: 100% 3px;
+}
+.mod-pager .prev,
+.mod-pager .next {
+  max-width: 40%;
+}
+.mod-pager .prev a,
+.mod-pager .next a {
+  font-weight: bold;
+}
+
+/* Footer
+   ========================================================================== */
+.global-footer {
+  background-color: #fafafa;
+  border-top: 2px solid #000;
+  padding: 1em 0;
+}
+.global-footer .profile ul {
+  padding: 0;
+}
+.global-footer .profile ul li {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Modules
+   ========================================================================== */
+/* Utilities
+   ========================================================================== */
+/* button */
+.btn {
+  display: inline-block;
+  width: 210px;
+  text-align: center;
+}
+.btn a {
+  display: block;
+  height: 35px;
+  padding: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4f4f4f), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(#4f4f4f, #222222);
+  background-image: -moz-linear-gradient(#4f4f4f, #222222);
+  background-image: -o-linear-gradient(#4f4f4f, #222222);
+  background-image: linear-gradient(#4f4f4f, #222222);
+  color: #fff;
+  font-size: 18px;
+  font-family: consolas, "Source Code Pro", sans-serif;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  line-height: 35px;
+  vertical-align: top;
+}
+.btn a:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #303030), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(#303030, #222222);
+  background-image: -moz-linear-gradient(#303030, #222222);
+  background-image: -o-linear-gradient(#303030, #222222);
+  background-image: linear-gradient(#303030, #222222);
+}
+.btn i {
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
+.download i {
+  margin: 7px 5px 0 0;
+}
+
+.demo i {
+  margin: 9px 5px 0 0;
+}
+
+/* link */
+.link {
+  padding-right: 20px;
+}
+
+/* SNS button */
+.sns {
+  margin: 0;
+  padding: 0;
+}
+.sns li {
+  list-style: none;
+  float: left;
+  margin-left: 10px;
+  line-height: 1;
+}
+.sns .twitter-share-button {
+  width: 110px !important;
+}
+.sns .facebook {
+  height: 20px;
+}
+.sns .google {
+  overflow: hidden;
+  width: 70px;
+}
+
+/* opacity hover */
+.hover-item:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+
+/* display */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Clearfix */
+.clearfix:before, .inner:before, .mod-article .tagline:before, .mod-pager ul:before, .sns:before, .clearfix:after, .inner:after, .mod-article .tagline:after, .mod-pager ul:after, .sns:after {
+  content: "";
+  display: table;
+}
+.clearfix:after, .inner:after, .mod-article .tagline:after, .mod-pager ul:after, .sns:after {
+  clear: both;
 }
