@@ -5,23 +5,27 @@
 .global-footer {
 	background-color: #fafafa;
 	border-top: 2px solid #000;
-	padding: 1em 0;
+	padding: 1em 0 0.5em;
 
 	.profile {
 		@extend .clearfix;
 		position: relative;
 		margin-bottom: 10px;
 		padding-left: 96px + 15;
+		font-family: $sourceCodePro;
+		letter-spacing: 0.15em;
 
 		.author {
 			margin: 0 0 15px;
-			font-size: 18px;
+			font-size: 20px;
 			font-weight: normal;
 		}
 		
 		ul {
 			margin: 0 0 10px;
 			padding: 0;
+			font-size: 14px;
+			letter-spacing: -0.05em;
 
 			li { list-style: none; }
 		}
