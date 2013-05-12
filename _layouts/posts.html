@@ -1,14 +1,46 @@
 ---
 layout: default
 ---
+
 <article class="mod-article">
 <header class="mod-article-header">
-<time pubdate="pubdate" datetime="{{ page.date | date_toxmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
 <h1>{{ page.title }}</h1>
+
+<div class="tagline">
+<p class="tags"><time pubdate="pubdate" datetime="{{ page.date | date_toxmlschema }}">{{ page.date | date: "%y/%m/%d" }}</time>
+<i></i><a href="#">CSS</a>, <a href="#">Javascript</a></p>
+<ul class="sns">
+<li class="mixi"><div data-plugins-type="mixi-favorite" data-service-key="820d43c643c0688fb2fd417983c2dba06657a03d"></div>
+<script type="text/javascript">
+(function(d) {
+    var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true;
+    s.src = '//static.mixi.jp/js/plugins.js#lang=ja';
+    d.getElementsByTagName('head')[0].appendChild(s);
+})(document);
+</script></li>
+<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+<li class="facebook"><div class="fb-like" data-href="http://blog.yuhiisk.com{{ page.url }}" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div></li>
+<li class="hatena"><a href="http://b.hatena.ne.jp/entry/http://blog.yuhiisk.com{{ page.url }}" class="hatena-bookmark-button" data-hatena-bookmark-title="{{ page.title }}" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+<script src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
+<li class="google"><script src="https://apis.google.com/js/plusone.js"></script><g:plusone size="medium"></g:plusone></li>
+</ul>
+<!-- /.tagline --></div>
 </header>
 
 <div class="mod-article-body">
 {{ content }}
 <!-- /.mod-article-body --></div>
-
 <!-- /.mod-article --></article>
+
+<nav class="mod-pager">
+<ul>
+{% if pagenator.previous_page %}
+<li class="prev"><a href="/page{{ pagenator.previous_page }}">prev</a></li>
+{% endif %}
+
+{% if pagenator.next_page %}
+<li class="next"><a href="/page{{ pagenator.next_page }}">next</a></li>
+{% endif %}
+</ul>
+<!-- /.mod-pager --></nav>

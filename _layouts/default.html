@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi:http://mixi-platform.com/ns# article: http://ogp.me/ns/article#">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page.title }}</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="- YUHIISK">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://blog.yuhiisk.com/">
+<meta property="og:image" content="http://blog.yuhiisk.com/img/og_image.jpg">
+<meta property="og:site_name" content="YUHIISK BLOG">
+<meta property="og:description" content="">
+<meta property="fb:appId" content="419866574778905">
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" sizes="16x16" href="/favicon.ico">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Megrim">
 <link rel="stylesheet" href="/css/style.css" media="all">
 <script>
   var _gaq = _gaq || [];
@@ -17,25 +31,52 @@
   })();
 </script>
 </head>
+
 <body>
-<div class="container">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=419866574778905";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <header class="global-header">
-<h1>My Blog - yuhiisk</h1>
-</header>
+<div class="inner">
+<h1 class="logo"><a href="/">Yuhiisk</a></h1>
+<nav>
+<ul>
+<li><a href="/">TOP</a></li>
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">CONTACT</a></li>
+</ul>
+<div class="toggle">
+<span></span>
+<span></span>
+<span></span>
+<!-- /.toggle --></div>
+</nav>
+<!-- /.inner --></div>
+<!-- /.global-header --></header>
 
 <div class="contents">
 {{ content }}
 <!-- /.contents --></div>
 
 <footer class="global-footer">
+<div class="inner">
+<div class="profile">
+<h2 class="author">Youhei Isokawa</h2>
 <ul>
-<li>Twitter: @yuhiisk</li>
-<li>Facebook: Youhei Isokawa</li>
+<li>Twitter: <a href="https://twitter.com/Yuhiisk" target="_blank">@Yuhiisk</a></li>
+<li>Facebook: <a href="https://www.facebook.com/youhei.isokawa" target="_blank">Youhei Isokawa</a></li>
 </ul>
-<p><small>Copyright &copy; Yuhiisk All rights reserved.</small></p>
-<!-- /.global-footer --></footer>
+<figure class="image"><img src="/img/icon.jpg" alt="yuhiisk" width="96" height="96" /></figure>
+<!-- /.profile --></div>
 
-<!-- /.container --></div>
+<p class="copyright"><small>Copyright &copy; Yuhiisk All rights reserved.</small></p>
+<!-- /.inner --></div>
+<!-- /.global-footer --></footer>
 </body>
 </html>
