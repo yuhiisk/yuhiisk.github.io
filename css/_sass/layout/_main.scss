@@ -18,7 +18,7 @@ i {
 // .next i { @include sprites($map-icon, arrow2, false); }
 
 .contents {
-	max-width: 800px;
+	max-width: $mainWidth;
 	margin: 0 auto;
 	padding: 0 10px;
 }
@@ -47,6 +47,17 @@ i {
 
 		.sns {
 			float: right;
+		}
+
+		@media screen and (max-width: $break-large) {
+
+			.tags, .sns {
+				float: none;
+			}
+			.tags {
+				margin-bottom: 20px;
+			}
+
 		}
 	}
 }
@@ -103,6 +114,8 @@ i {
 	}
 
 	img {
+		max-width: 800px;
+		height: auto;
 		padding: 4px;
 		background: url(#{$imgPath}dot.png) repeat;
 	}
