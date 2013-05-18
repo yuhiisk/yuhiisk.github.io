@@ -1,32 +1,89 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi:http://mixi-platform.com/ns# article: http://ogp.me/ns/article#">
 <meta charset="UTF-8">
+<title>Yuhiisk</title>
+<meta name="description" content="フロントエンドに関するブログ。Yuhiisk">
+<meta name="keywords" content="HTML,CSS,Javascript,フロントエンド,yuhiisk">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MY SITENAME</title>
+<meta property="og:title" content="Yuhiisk">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://blog.yuhiisk.com/index.html">
+<meta property="og:image" content="http://blog.yuhiisk.com/img/og_image.gif">
+<meta property="og:site_name" content="Yuhiisk">
+<meta property="og:description" content="Yuhiisk">
+<meta property="fb:appId" content="419866574778905">
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" sizes="16x16" href="/favicon.ico">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Megrim">
+<link rel="stylesheet" href="/css/style.css" media="all">
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40662331-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </head>
+
 <body>
-<div class="container">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=419866574778905";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <header class="global-header">
-<h1>My Blog - yuhiisk</h1>
-</header>
+<div class="inner">
+<h1 class="logo"><a href="/">Yuhiisk</a></h1>
+<nav>
+<ul>
+<li><a href="/">TOP</a></li>
+<li><a href="/about/">ABOUT</a></li>
+<li><a href="/contact/">CONTACT</a></li>
+</ul>
+</nav>
+<div class="toggle">
+<span></span>
+<span></span>
+<span></span>
+<!-- /.toggle --></div>
+<!-- /.inner --></div>
+<!-- /.global-header --></header>
 
 <div class="contents">
-<ul>
+<ul class="mod-index-list">
 
-<li>2013-05-04 <a href="/2013/05/04/first-post.html">Awesome Entry</a></li>
+<li><a href="/jekyll/2013/05/18/welcome.html">jekyllでブログ始めます</a>
+<p>Posted on <span class="date">May 18, 2013</span></p></li>
 
 </ul>
-
 <!-- /.contents --></div>
 
+
 <footer class="global-footer">
+<div class="inner">
+<div class="profile">
+<h2 class="author">五十川 洋平<span>（いそかわ ようへい）</span></h2>
+<p>フロントエンドエンジニア</p>
 <ul>
-<li>Twitter: @yuhiisk</li>
-<li>Facebook: Youhei Isokawa</li>
+<li>Twitter: <a href="https://twitter.com/Yuhiisk" target="_blank">@Yuhiisk</a></li>
+<li>Facebook: <a href="https://www.facebook.com/youhei.isokawa" target="_blank">Youhei Isokawa</a></li>
 </ul>
-<p><small>Copyright &copy; Yuhiisk All rights reserved.</small></p>
+<figure class="image"><img src="/img/icon.jpg" alt="yuhiisk" width="96" height="96" /></figure>
+<!-- /.profile --></div>
+
+<p class="copyright"><small>Copyright &copy; Yuhiisk All rights reserved.</small></p>
+<!-- /.inner --></div>
 <!-- /.global-footer --></footer>
-<!-- /.container --></div>
 </body>
 </html>

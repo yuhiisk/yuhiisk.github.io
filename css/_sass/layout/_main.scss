@@ -17,13 +17,38 @@ i {
 // .prev i { @include sprites($map-icon, arrow1, false); }
 // .next i { @include sprites($map-icon, arrow2, false); }
 
+/* index */
 .contents {
 	max-width: $mainWidth;
 	margin: 0 auto;
 	padding: 0 10px;
 }
+.mod-index-list {
+	margin: 30px 0;
+	padding: 0;
 
+	li {
+		list-style: none;
+		margin-bottom: 20px;
+	}
+	a {
+		color: $fontColor;
+		font-size: 2em;
+		text-decoration: none;
 
+		&:hover { text-decoration: none; }
+	}
+	p {
+		margin: 0 0 20px;
+		color: lighten($fontColor, 35);
+
+		.date {
+			color: lighten($fontColor, 15);
+		}
+	}
+}
+
+/* post */
 .mod-article {
 	@extend .contents;
 	padding-top: 20px;
@@ -36,7 +61,6 @@ i {
 		time {
 			display: block;
 			float: left;
-			width: 5em;
 		}
 		.tags {
 			float: left;
@@ -168,4 +192,9 @@ i {
 			font-weight: bold;
 		}
 	}
+}
+
+.mod-disqus {
+	@extend .contents;
+	margin-bottom: 30px;
 }

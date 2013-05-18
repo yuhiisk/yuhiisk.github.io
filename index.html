@@ -1,10 +1,12 @@
 ---
 layout: default
-title: MY SITENAME
 ---
 
-<ul>
+<div class="contents">
+<ul class="mod-index-list">
 {% for page in site.posts %}
-<li>{{ page.date | date: "%Y-%m-%d" }} <a href="{{ page.url }}">{{ page.title }}</a></li>
+<li><a href="{{ page.url }}">{{ page.title }}</a>
+<p>Posted on <span class="date">{{ page.date | date: "%b %d, %Y"}}</span></p></li>
 {% endfor %}
 </ul>
+<!-- /.contents --></div>

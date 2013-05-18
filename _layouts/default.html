@@ -2,16 +2,16 @@
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi:http://mixi-platform.com/ns# article: http://ogp.me/ns/article#">
 <meta charset="UTF-8">
-<title>{{ page.title }}</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="フロントエンドに関するブログ。Yuhiisk">
+<meta name="keywords" content="HTML,CSS,Javascript,フロントエンド,yuhiisk">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="- YUHIISK">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://blog.yuhiisk.com{{ page.url }}">
-<meta property="og:image" content="http://blog.yuhiisk.com/img/og_image.gif">
-<meta property="og:site_name" content="YUHIISK BLOG">
-<meta property="og:description" content="">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+<meta property="og:type" content="{% if page.title %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/img/og_image.gif">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:description" content="{{ site.title }}">
 <meta property="fb:appId" content="419866574778905">
 
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" sizes="16x16" href="/favicon.ico">
@@ -48,21 +48,19 @@
 <nav>
 <ul>
 <li><a href="/">TOP</a></li>
-<li><a href="#">ABOUT</a></li>
-<li><a href="#">CONTACT</a></li>
+<li><a href="/about/">ABOUT</a></li>
+<li><a href="/contact/">CONTACT</a></li>
 </ul>
+</nav>
 <div class="toggle">
 <span></span>
 <span></span>
 <span></span>
 <!-- /.toggle --></div>
-</nav>
 <!-- /.inner --></div>
 <!-- /.global-header --></header>
 
-<div class="contents">
 {{ content }}
-<!-- /.contents --></div>
 
 <footer class="global-footer">
 <div class="inner">

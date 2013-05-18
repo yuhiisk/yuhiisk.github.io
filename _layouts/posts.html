@@ -7,8 +7,8 @@ layout: default
 <h1>{{ page.title }}</h1>
 
 <div class="tagline">
-<p class="tags"><time pubdate="pubdate" datetime="{{ page.date | date_toxmlschema }}">{{ page.date | date: "%y/%m/%d" }}</time>
-<i></i><a href="#">CSS</a>, <a href="#">Javascript</a></p>
+<p class="tags"><time pubdate="pubdate" datetime="{{ page.date | date_toxmlschema }}">{{ page.date | date: "%b %d,%Y" }}</time>
+{% if page.category %}<i></i><a href="/category/{{ page.category }}/">{{ page.category }}</a>{% endif %}</p>
 <ul class="sns">
 <li class="mixi"><div data-plugins-type="mixi-favorite" data-service-key="820d43c643c0688fb2fd417983c2dba06657a03d"></div>
 <script type="text/javascript">
@@ -20,8 +20,8 @@ layout: default
 </script></li>
 <li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
-<li class="facebook"><div class="fb-like" data-href="http://blog.yuhiisk.com{{ page.url }}" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div></li>
-<li class="hatena"><a href="http://b.hatena.ne.jp/entry/http://blog.yuhiisk.com{{ page.url }}" class="hatena-bookmark-button" data-hatena-bookmark-title="{{ page.title }}" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+<li class="facebook"><div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div></li>
+<li class="hatena"><a href="http://b.hatena.ne.jp/entry/{{ site.url }}{{ page.url }}" class="hatena-bookmark-button" data-hatena-bookmark-title="{{ page.title }}" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
 <script src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
 <li class="google"><script src="https://apis.google.com/js/plusone.js"></script><g:plusone size="medium"></g:plusone></li>
 </ul>
@@ -35,12 +35,23 @@ layout: default
 
 <nav class="mod-pager">
 <ul>
-{% if pagenator.previous_page %}
-<li class="prev"><a href="/page{{ pagenator.previous_page }}">prev</a></li>
+{% if page.previous %}
+<li class="prev"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></li>
 {% endif %}
-
-{% if pagenator.next_page %}
-<li class="next"><a href="/page{{ pagenator.next_page }}">next</a></li>
+{% if page.next %}
+<li class="next"><a href="{{ page.next.url }}">{{ page.next.title }}</a></li>
 {% endif %}
 </ul>
 <!-- /.mod-pager --></nav>
+
+<div id="disqus_thread" class="mod-disqus"></div>
+<script type="text/javascript">
+var disqus_shortname = 'yuhiisk';
+
+(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+

@@ -1,12 +1,12 @@
-server_post: 4000
 encoding: utf-8
 
-pagenate: 10
+title: Yuhiisk
+url: http://blog.yuhiisk.com
 
-server: true
-watch: true
-#safe: true
-#source: https://github.com/yuhiisk/yuhiisk.github.io.git
-#destination: _site
-#lsi: false
+paginate: 5
+#limit_posts: 0
 pygments: true
+
+category_dir: category
+category_title_prefix: カテゴリ：
+
