@@ -7,7 +7,7 @@ layout: default
 <h1>{{ page.title }}</h1>
 
 <div class="tagline">
-<p class="tags"><time pubdate="pubdate" datetime="{{ page.date | date_toxmlschema }}">{{ page.date | date: "%b %d,%Y" }}</time>
+<p class="tags"><time pubdate="pubdate" datetime="{{ page.date | date_toxmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
 {% if page.category %}<i></i><a href="/category/{{ page.category }}/">{{ page.category }}</a>{% endif %}</p>
 <ul class="sns">
 <li class="mixi"><div data-plugins-type="mixi-favorite" data-service-key="820d43c643c0688fb2fd417983c2dba06657a03d"></div>

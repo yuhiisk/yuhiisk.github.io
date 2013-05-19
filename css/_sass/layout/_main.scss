@@ -118,6 +118,13 @@ i {
 
 	p, blockquote, li {
 		line-height: 2;
+
+		code {
+			margin: 0 5px;
+			padding: 2px 5px;
+			@include border-radius(3px);
+			background-color: #eee;
+		}
 	}
 
 	blockquote {
@@ -198,3 +205,6 @@ i {
 	@extend .contents;
 	margin-bottom: 30px;
 }
+
+
+
