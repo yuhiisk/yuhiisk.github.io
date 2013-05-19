@@ -9,13 +9,13 @@ end
 
 desc 'deploy to production'
 task :deploy do
-  sh 'bundle exec jekyll'
+  sh 'jekyll build'
   sh 'rm -rf _deploy/*'
   sh 'cp -R _site/* _deploy'
   cd '_deploy' do
     sh 'git add -A'
     sh 'git commit -v'
-    sh 'git push origin gh-pages'
+    sh 'git push origin master'
   end
 end
 
@@ -42,5 +42,5 @@ end
 
 desc 'run dev server'
 task 'server' do
-  sh 'bundle exec jekyll serve -w'
+  sh 'jekyll serve -w'
 end
