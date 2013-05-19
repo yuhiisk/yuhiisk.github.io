@@ -11,7 +11,7 @@ layout: default
 {% if page.category %}<i></i><a href="/category/{{ page.category }}/">{{ page.category }}</a>{% endif %}</p>
 <ul class="sns">
 <li class="mixi"><div data-plugins-type="mixi-favorite" data-service-key="820d43c643c0688fb2fd417983c2dba06657a03d"></div>
-<script type="text/javascript">
+<script>
 (function(d) {
     var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true;
     s.src = '//static.mixi.jp/js/plugins.js#lang=ja';
@@ -54,4 +54,13 @@ var disqus_shortname = 'yuhiisk';
 	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 </script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=419866574778905";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
