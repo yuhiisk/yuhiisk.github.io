@@ -3,7 +3,7 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi:http://mixi-platform.com/ns# article: http://ogp.me/ns/article#">
 <meta charset="UTF-8">
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-<meta name="description" content="フロントエンドに関するブログ。Yuhiisk">
+<meta name="description" content="{% if page.title %}{{ page.title }} - {% endif %}フロントエンドに関するブログ。{{ site.title }}">
 <meta name="keywords" content="HTML,CSS,Javascript,フロントエンド,yuhiisk">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:description" content="{{ site.title }}">
 <meta property="fb:appId" content="419866574778905">
-<link rel="canonical" href="{{ site.url }}{% if page.url %}{{ page.url }}{$ endif %}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <link rel="alternate" type="application/rss+xml" title="Yuhiisk" href="/rss.xml">
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" sizes="16x16" href="/favicon.ico">
 
